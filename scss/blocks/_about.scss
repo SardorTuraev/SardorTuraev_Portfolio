@@ -1,0 +1,113 @@
+.about{
+  background-color: $main-background-color;
+  padding: 80px 0 80px 0;
+  width: 100%;
+  display: block;
+  color: #fff;
+}
+
+.about__wrapper{
+  @include d-flex(space-between);
+}
+
+.about__title{
+  margin-bottom: 50px;
+  @include d-flex(center);
+  font-family: $font-ubuntu;
+  letter-spacing: 2px;
+  color: $light-color;
+  font-size: 50px;
+  font-weight: 800;
+
+  &::before{
+    margin-right: 15px;
+    width: 50px;
+    height: 3px;
+    background-color: $light-color;
+    content: '';
+  }
+  &::after{
+    margin-left: 15px;
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: $light-color;
+  }
+}
+
+.type__second{
+  color: $primary-color;
+}
+
+.about__link{
+  text-decoration: none;
+  color: $light-color;
+  background-color: $primary-color;
+  padding: 10px 15px;
+  border-radius: 10px;
+  display: inline-block;
+  transition: all ease 0.4s;
+
+  &:hover{
+    opacity: 0.8;
+  }
+}
+
+.about-wrapper__text{
+  width: 700px;
+  margin-bottom: 25px;
+  font-family: $font-montserrat;
+  line-height: 30px;
+}
+
+@include breakpoint-down(1030px){
+  .about__title{
+    font-size: 40px;
+  }
+
+  .about__wrapper{
+    flex-direction: column;
+  }
+
+  .about-wrapper__icon{
+    width: 280px;
+    height: 280px;
+    margin-bottom: 40px;
+  }
+
+  .about-wrapper__text{
+    width: 100%;
+  }
+
+  .about__link{
+    padding: 8px 10px;
+  }
+}
+
+@include breakpoint-down (720px){
+  .about-wrapper__icon{
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@include breakpoint-down(520px){
+  .about-wrapper__text{
+    font-size: 14px;
+  }
+}
+
+@include breakpoint-down(420px){
+  .about__title{
+    font-size: 30px;
+
+    &::before {
+      width: 30px;
+      
+    }
+  
+    &::after {
+      width: 30px;
+    }
+  }
+}

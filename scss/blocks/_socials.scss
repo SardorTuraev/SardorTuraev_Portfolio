@@ -1,0 +1,32 @@
+.socials{
+  margin: 0;
+  margin-top: 45px;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.socials__item{
+  margin-right: 15px;
+}
+
+.socials__icon{
+  fill: #fff;
+  transition: all 0.4s ease;
+
+  &:hover{
+    fill: $primary-color;
+  }
+}
+
+@include breakpoint-down(780px){
+  .socials{
+    margin-top: 30px;
+  }
+}
+
+@include breakpoint-down(580px){
+  .socials{
+    margin-top: 20px;
+  }
+}

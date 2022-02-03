@@ -1,0 +1,22 @@
+.footer{
+  padding: 15px 0;
+  background-color: $dark-color;
+}
+
+.footer__text{
+  color: $light-color;
+  text-align: center;
+  display: block;
+  font-size: 12px;
+  font-weight: 100;
+}
+
+@include breakpoint-down(780px){
+  .footer{
+    padding: 8px 0;
+  }
+
+  .footer__text{
+    font-size: 8px;
+  }
+}

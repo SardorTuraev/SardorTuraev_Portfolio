@@ -1,0 +1,54 @@
+/* IMG RETINA */
+
+@mixin cssretina {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+/* MEDIA MOBILE FIRST */
+@mixin breakpoint-up ($size){
+  @media only screen and (min-width: $size){
+    @content;
+  }
+}
+
+/* MEDIA DESKTOP FIRST */
+@mixin breakpoint-down ($size){
+  @media only screen  and (max-width: $size){
+    @content;
+  }
+}
+
+
+@mixin breakpoint-between ($min, $max){
+  @media only screen and (min-width: $min) and (max-width: $max){
+    @content;
+  }
+}
+
+// list-unstyled
+@mixin list-unstyled {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+// display-flex
+@mixin d-flex ($justify-content) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify-content;
+}
+
+// backgroubd-style
+@mixin background-image($bg-size) {
+  background-repeat: no-repeat;
+  background-size: $bg-size;
+  background-position: center;
+}

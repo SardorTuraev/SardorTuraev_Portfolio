@@ -1,0 +1,135 @@
+.contact {
+  padding: 80px 0;
+  background-color: $main-background-color;
+}
+
+.contact__inner{
+  width: 100%;
+}
+
+.contact__title {
+  font-family: $font-ubuntu;
+  @include d-flex(flex-start);
+  color: $light-color;
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &::after{
+    margin-top: 10px;
+    content: '';
+    background-color: $primary-color;
+    width: 40px;
+    height: 3px;
+  }
+}
+
+.contact__socials{
+  margin-bottom: 60px;
+  width: 100%;
+  display: flex; 
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contact-socials__text{
+  width: 600px;
+  color: #fff;
+  font-family: $font-montserrat;
+  line-height: 30px;
+  letter-spacing: 1px;
+}
+
+.contact__form{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-form__input.contact__textarea{
+  resize: none;
+  min-height: 96px;
+}
+
+.contact-form__wrapper{
+  width: 600px;
+}
+
+.contact-form__input{
+  margin-bottom: 12px;
+  padding: 15px 10px;
+  display: block; 
+  width: 100%;
+  border: none;
+  color: $light-color;
+  border-bottom: 2px solid $primary-color;
+  border-radius: 10px;
+  outline: none;
+  font-weight: 400;
+  background-color: rgba(0, 0, 0, 0.28);
+  
+  &::placeholder{
+    color: #fff;
+    font-size: 14px;
+  }
+}
+
+.contact-form__btn{
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: $primary-color;
+  border: none;
+  border-radius: 10px;
+  color: $light-color;
+  cursor: pointer;
+  transition: all 0.4s ease;
+
+  &:hover{
+    opacity: 0.8;
+  }
+}
+
+@include breakpoint-down(1040px){
+  .contact__title {
+    font-size: 35px;
+  }
+  
+  .contact-socials__text{
+    font-size: 14px;
+    width: 600px;
+  }
+}
+
+@include breakpoint-down(980px){
+  .contact__socials{
+    margin-bottom: 80px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact__title{
+    align-items: flex-start;
+    margin-bottom: 25px;
+  }
+
+  .contact-socials__text{
+    width: 100%;
+  }
+
+  .contact__form{
+    flex-direction: column;
+  }
+
+  .contact-form__btn{
+    margin-top: 10px;
+  }
+}
+
+@include breakpoint-down(780px){
+  .contact-form__wrapper{
+    width: 100%;
+  }
+}

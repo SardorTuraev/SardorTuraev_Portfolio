@@ -1,0 +1,280 @@
+.hero {
+	display: flex;
+	height: 100vh;
+	width: 100%;
+	min-height: 680px;
+	color: $light-color;
+	background-image: url(../../img/background-img-2.svg);
+	@include background-image(cover);
+	background-attachment: fixed;
+}
+
+.hero-inner {
+	margin: auto;
+	display: flex;
+	align-items: center;
+}
+
+.hero-inner__desc {
+	font-family: $font-ubuntu;
+	margin-bottom: 10px;
+	font-weight: 600;
+	font-size: 25px;
+}
+
+.hero-inner__name {
+	font-family: $font-ubuntu;
+	font-size: 65px;
+	font-weight: 800;
+	margin-bottom: 10px;
+}
+
+.type {
+	font-family: $font-ubuntu;
+	margin: 0 auto;
+	width: 200px;
+	color: $primary-color;
+	
+	&::after {
+		content: '|';
+		display: inline;
+		animation: blink 0.7s infinite;
+	}
+}
+
+.hero-inner__text {
+	font-family: $font-ubuntu;
+	color: $light-color;
+	font-size: 40px;
+	margin-bottom: 25px;
+}
+
+/* TODO HERO-RIGHT  */
+.hero-right__list {
+	@include list-unstyled;
+}
+
+.hero-right__btns {
+	margin-bottom: 30px;
+	display: flex;
+	align-items: center;
+}
+
+.hero-right__button {
+	margin-right: 8px;
+	height: 12px;
+	width: 12px;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+
+	&:first-child{
+		background-color: $red-color ;
+	}
+
+	&:nth-child(2){
+		background-color: $yellow-color;
+	}
+
+	&:last-child{
+		background-color: $green-color;
+	}
+
+	&.btn__close:hover{
+		background-image: url(/icon/close-btn.svg);
+		@include background-image (6px);
+	}
+
+	&.btn__minus:hover{
+		background-image: url(/icon/minus-icon.svg);
+		@include background-image (6px);
+	}
+
+	&.btn__resize:hover{
+		background-image: url(/icon/full-screeen-icon.svg);
+		@include background-image (6px);
+	}
+}
+
+.hero-right__code {
+	margin-left: auto;
+	padding: 15px 25px 25px 15px;
+	width: 440px;
+	background-color: $main-background-color;
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
+	border-radius: 10px;
+}
+
+.hero-right__item {
+	pre {
+		overflow-x: hidden;
+		font-size: 13px;
+		font-weight: 300;
+		color: $light-color;
+		letter-spacing: 0.04px;
+	}
+
+	b {
+		font-size: 14px;
+		font-weight: 900;
+	}
+}
+
+/*Removes cursor that comes with typed.js*/
+.typed-cursor {
+	opacity: 0;
+	display: none;
+}
+
+/*Custom cursor animation*/
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes blink {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes blink {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@include breakpoint-down(1150px){
+	.hero-inner__desc {
+		font-family: $font-ubuntu;
+		margin-bottom: 10px;
+		font-weight: 600;
+		font-size: 25px;
+	}
+	
+	.hero-inner__name {
+		font-family: $font-ubuntu;
+		font-size: 45px;
+		font-weight: 800;
+		margin-bottom: 10px;
+	}
+	
+	.type {
+		font-family: $font-ubuntu;
+		margin: 0 auto;
+		width: 200px;
+		color: $primary-color;
+		
+		&::after {
+			content: '|';
+			display: inline;
+			animation: blink 0.7s infinite;
+		}
+	}
+	
+	.hero-inner__text {
+		font-family: $font-ubuntu;
+		color: $light-color;
+		font-size: 25px;
+		margin-bottom: 25px;
+	}
+}
+
+@include breakpoint-down(970px){
+	.hero-inner__details{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.hero-inner__desc {
+		font-family: $font-ubuntu;
+		margin-bottom: 10px;
+		font-weight: 600;
+		font-size: 25px;
+	}
+	
+	.hero-inner__name {
+		font-family: $font-ubuntu;
+		font-size: 65px;
+		font-weight: 800;
+		margin-bottom: 10px;
+	}
+	
+	.hero-inner__text {
+		font-family: $font-ubuntu;
+		color: $light-color;
+		font-size: 40px;
+		margin-bottom: 25px;
+	}
+	.hero-right__code {
+		display: none;
+	}
+}
+
+@include breakpoint-down(680px){
+	.hero-inner__name{
+		font-size: 45px;
+	}
+
+	.hero-inner__text{
+		font-size: 32px;
+	}
+
+	.hero-inner__desc{
+		font-size: 20px;
+	}
+}
+
+@include breakpoint-down(500px){
+	.hero-inner__name{
+		font-size: 38px;
+	}
+
+	.hero-inner__text{
+		font-size: 24px;
+	}
+
+	.hero-inner__desc{
+		font-size: 20px;
+	}
+}
+
+@include breakpoint-down(420px){
+	.hero-inner__name{
+		font-size: 30px;
+	}
+
+	.hero-inner__text{
+		font-size: 20px;
+	}
+
+	.hero-inner__desc{
+		font-size: 18px;
+	}
+}
+
